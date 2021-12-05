@@ -19,4 +19,8 @@ export class DigimonService {
   getDigimon(name: String): Observable<any> {
     return this.http.get<any>(this.urlDigimons + "digimon/name/" + name);
   }
+
+  filtrarDigimons(level: String): Observable<any> {
+    return this.http.get<any>(this.urlDigimons + "digimon/level/" + level);
+  }
 }

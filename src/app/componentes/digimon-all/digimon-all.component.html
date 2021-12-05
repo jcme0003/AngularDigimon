@@ -1,14 +1,57 @@
 <div *ngIf="digimons">
     <h1 class="text-center my-3">Listado Digimon</h1>
+    <span>Filtrar por: </span>
 
-    <div class="row">
-        <div *ngFor="let digimon of digimons" class="col-6 col-md-4 col-lg-3 thumbnail">
-            <a class="link-unstyled" [href]="digimon.name" (click)="mostrarDigimon(digimon.name)">
-                <img class="img-thumbnail" [src]="digimon.img" alt="digimon" />
-                <div class="caption">
-                    <p class="link-dark text-center">{{ digimon.name }}</p>
-                </div>
-            </a>
-        </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="getDigimons()">
+        <label class="form-check-label" for="flexRadioDefault1">Ninguno</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('Fresh')">
+        <label class="form-check-label" for="flexRadioDefault1">Fresh</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('In training')">
+        <label class="form-check-label" for="flexRadioDefault1">In training</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('Rookie')">
+        <label class="form-check-label" for="flexRadioDefault1">Rookie</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('Champion')">
+        <label class="form-check-label" for="flexRadioDefault1">Champion</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('Armor')">
+        <label class="form-check-label" for="flexRadioDefault1">Armor</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('Ultimate')">
+        <label class="form-check-label" for="flexRadioDefault1">Ultimate</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+            (click)="filtrarDigimons('Mega')">
+        <label class="form-check-label" for="flexRadioDefault1">Mega</label>
+    </div>
+</div>
+
+<div class="row">
+    <p><b>{{ digimons.length }}</b> Resultados</p>
+    <div *ngFor="let digimon of digimons" class="col-6 col-md-4 col-lg-3 thumbnail">
+        <a class="link-unstyled" [href]="digimon.name">
+            <img class="img-thumbnail" [src]="digimon.img" alt="digimon" />
+            <div class="caption">
+                <p class="link-dark text-center">{{ digimon.name }}</p>
+            </div>
+        </a>
     </div>
 </div>

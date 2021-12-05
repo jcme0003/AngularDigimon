@@ -14,6 +14,13 @@ export class DigimonAllComponent implements OnInit {
   constructor(
     private digimonService: DigimonService,
   ) {
+    this.getDigimons();
+  }
+
+  ngOnInit() {
+  }
+
+  getDigimons() {
     this.digimonService.getDigimons().subscribe(
       result => {
         this.digimons = result;
@@ -24,7 +31,15 @@ export class DigimonAllComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
+  filtrarDigimons(level: String) {
+    this.digimonService.filtrarDigimons(level).subscribe(
+      result => {
+        this.digimons = result;
+        console.log(this.digimons);
+      }, error => {
+        console.log("Error carga componente mas buscados");
+      }
+    );
   }
 
 }
