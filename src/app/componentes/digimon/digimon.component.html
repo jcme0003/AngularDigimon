@@ -1,0 +1,10 @@
+<a class="link-dark link-unstyled" href="/">< Volver</a>
+<div *ngIf="digimons">
+    <div class="row mt-4 justify-content-center" *ngFor="let digimon of digimons">
+        <div class="ps-5 col-7 col-lg-4">
+            <h1>{{ digimon.name }}</h1>
+            <p>Nivel: {{ digimon.level }}</p>
+        </div>
+        <img class="col-5 img-thumbnail" [src]="digimon.img" [alt]="digimon.name" />
+    </div>
+</div>

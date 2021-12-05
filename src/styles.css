@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.link-unstyled {
+    text-decoration: inherit;
+}
+
+.link-unstyled:hover {
+    font-weight: 700;
+}

@@ -1,0 +1,10 @@
+{
+    "/apifruit/*": {
+        "target": "https://www.fruityvice.com/api",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

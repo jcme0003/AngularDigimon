@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { BuscadosComponent } from './componentes/buscados/buscados.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DigimonAllComponent } from './componentes/digimon-all/digimon-all.component';
+import { DigimonComponent } from './componentes/digimon/digimon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    BuscadosComponent
+    BuscadosComponent,
+    DigimonAllComponent,
+    DigimonComponent
   ],
   imports: [
     HttpClientModule,

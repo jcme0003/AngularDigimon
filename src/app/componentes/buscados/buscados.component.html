@@ -1,6 +1,9 @@
 <div *ngIf="buscados">
     <h2>Buscados...</h2>
 </div>
-<div *ngFor="let buscado of buscados">
-    <h3>{{ buscado.title }}</h3>
+<div class="row">
+    <div *ngFor="let buscado of buscados" class="col-sm-3">
+        <h3>{{ buscado.name }}</h3>
+        <p><a href="#">Ver más</a></p>
+    </div>
 </div>

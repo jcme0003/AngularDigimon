@@ -16,7 +16,7 @@ export class BuscadosComponent implements OnInit {
     ) {
     this.buscadosService.getMasBuscados().subscribe(
       result => {
-        this.buscados = result.items;
+        this.buscados = result.results;
         console.log(this.buscados);
       }, error => {
         console.log("Error carga componente mas buscados");
